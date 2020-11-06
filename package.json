@@ -1,13 +1,24 @@
 {
   "name": "json-vuer",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "a json viewer and editor component for vue",
+  "keywords": ["vue", "json", "json-viewer", "json-editor"],
+  "homepage": "https://github.com/liudding/json-vuer",
+  "license": "MIT",
+  "author": {
+    "name": "liuding",
+    "email": "liuding.ld@foxmail.com"
+  },
   "main": "json-vuer.umd.min.js",
   "scripts": {
     "package": "vue-cli-service build --target lib --name json-vuer --dest lib src/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liudding/json-vuer.git"
   },
   "dependencies": {
     "core-js": "^3.6.5",
