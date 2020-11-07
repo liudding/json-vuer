@@ -2,8 +2,7 @@
 <template>
   <span
     @click="onClickCopy"
-    class="json-node-tool__copy"
-    style="cursor: pointer"
+    class="json-node-tool json-node-tool__copy"
     title="Copy"
   >
     <clipboard></clipboard>
