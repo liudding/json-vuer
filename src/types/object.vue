@@ -13,6 +13,7 @@ export default {
     "showArrayIndex",
     "showDataType",
     "showComma",
+    "iconStyle",
     "copyable",
     "editable",
     "addable",
@@ -45,6 +46,7 @@ export default {
               showDataType: this.showDataType,
               showName: !this.isArray() || this.showArrayIndex,
               showComma: this.showComma && !isLast,
+              iconStyle: this.iconStyle,
               showArrayIndex: this.showArrayIndex,
 
               copyable: this.copyable,

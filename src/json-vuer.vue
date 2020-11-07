@@ -1,7 +1,7 @@
 <template>
   <div :class="viewerClasses">
     <json-node
-      :value="src"
+      :value="value"
       :name="name"
       :indentWidth="indentWidth"
       :showDataType="showDataTypes"
@@ -9,6 +9,7 @@
       :showArrayIndex="showArrayIndex"
       :showObjectSize="showObjectSize"
       :objectSizeName="objectSizeName"
+      :iconStyle="iconStyle"
       :isRoot="true"
       :copyable="copyable"
       :addable="addable"
@@ -32,7 +33,7 @@ export default {
   name: "JsonViewer",
   components: { JsonNode, FieldEditor, Modal },
   props: {
-    src: {
+    value: {
       type: [Object, Array, String, Number, Boolean, Date, Function],
       default: null,
     },
@@ -74,6 +75,11 @@ export default {
     showComma: {
       type: Boolean,
       default: true,
+    },
+
+    iconStyle: {
+      type: String,
+      default: "circle"
     },
 
     theme: {
@@ -125,7 +131,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.src.name);
   },
 
   methods: {},

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <json-viewer :src="json" theme="default"/>
+    <json-viewer :value="json" theme="default"/>
   </div>
 </template>
 

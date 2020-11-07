@@ -24,6 +24,7 @@ export default {
       default: true,
     },
     showComma: Boolean,
+    iconStyle: String,
     isRoot: {
       type: Boolean,
       default: false,
@@ -135,6 +136,9 @@ export default {
       }
 
       return h(Toggle, {
+        props: {
+          iconStyle: this.iconStyle
+        },
         on: {
           collapsed: this.toggleCollapse,
         },
@@ -170,6 +174,7 @@ export default {
           showArrayIndex: this.showArrayIndex,
           showObjectSize: this.showObjectSize,
           objectSizeName: this.objectSizeName,
+          iconStyle: this.iconStyle,
 
           copyable: this.copyable,
           addable: this.addable,
