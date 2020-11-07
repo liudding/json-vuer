@@ -14,6 +14,7 @@ export default {
     "showDataType",
     "showComma",
     "iconStyle",
+    "sort",
     "copyable",
     "editable",
     "addable",
@@ -30,6 +31,10 @@ export default {
       const elements = [];
 
       const keys = Object.keys(this.value || {});
+
+      if (this.sort) {
+        keys.sort();
+      }
 
       keys.forEach((item, index) => {
         const isLast = index === keys.length - 1;
@@ -48,6 +53,7 @@ export default {
               showComma: this.showComma && !isLast,
               iconStyle: this.iconStyle,
               showArrayIndex: this.showArrayIndex,
+              sort: this.sort,
 
               copyable: this.copyable,
               addable: this.addable,

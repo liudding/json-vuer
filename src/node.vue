@@ -25,6 +25,7 @@ export default {
     },
     showComma: Boolean,
     iconStyle: String,
+    sort: Boolean,
     isRoot: {
       type: Boolean,
       default: false,
@@ -178,6 +179,7 @@ export default {
           showObjectSize: this.showObjectSize,
           objectSizeName: this.objectSizeName,
           iconStyle: this.iconStyle,
+          sort: this.sort,
 
           copyable: this.copyable,
           addable: this.addable,

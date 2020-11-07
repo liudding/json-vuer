@@ -10,6 +10,7 @@
       :showObjectSize="showObjectSize"
       :objectSizeName="objectSizeName"
       :iconStyle="iconStyle"
+      :sort="sort"
       :isRoot="true"
       :copyable="copyable"
       :addable="addable"
@@ -79,7 +80,7 @@ export default {
 
     iconStyle: {
       type: String,
-      default: "circle"
+      default: "circle",
     },
 
     theme: {
@@ -130,8 +131,7 @@ export default {
     );
   },
 
-  mounted() {
-  },
+  mounted() {},
 
   methods: {},
 };
