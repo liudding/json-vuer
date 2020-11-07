@@ -20,9 +20,9 @@ export default {
 
     return (
       <span>
-        <span class="json-quotes">"</span>
+        <span class="json-quotes json-quotes__name">"</span>
         <span class="json-name">{this.name}</span>
-        <span class="json-quotes">"</span>
+        <span class="json-quotes json-quotes__name">"</span>
         <span class="json-colon">:</span>
       </span>
     );

@@ -1,5 +1,6 @@
-.json-viewer-container.greenscreen {
-    background-color: #1a2c30;
+.json-viewer-container.night {
+    // display: none;
+    background-color: rgba(51, 51, 51);
 
     min-width: 80px;
     min-height: 80px;
@@ -7,10 +8,10 @@
     padding: 16px;
 
     .json-name {
-        color: #00ff00;
+        color: rgb(197, 112, 110);
 
         &.array-index {
-            color: #00ff0088;
+            color: rgb(117, 169, 145);
         }
     }
 
@@ -18,44 +19,40 @@
         &__object {
             margin-left: 4px;
             .fold-line {
-                border-left: 1px dotted #00ff0044;
+                border-left: 1px dotted rgb(185,191,197, 0.5);
             }
         }
 
         &__string {
-            color: #00ff00;
+            color: rgb(197, 112, 110);
         }
 
         &__boolean {
-            color: #00ff00;
+            color: rgb(142, 181, 201);
         }
 
-        &__integer {
-            color: #00ff00;
-        }
-
+        &__integer,
         &__float {
-            color: #00ff00;
+            color: rgb(117, 169, 145);
         }
 
-        &__date {
-            color: #00ff00;
+        &__null {
+            color: rgb(142, 181, 201);
         }
 
         &__undefined,
-        &__null,
         &__nan {
             box-sizing: border-box;
             padding: 0 4px;
             border-radius: 4px;
-            color: #00ff00;
-            background-color: #00ff0044;
+            color: rgb(142, 181, 201);
             font-size: 11px;
         }
     }
 
     .json-braces {
         font-weight: bold;
+        color: rgb(185,191,197);
         // cursor: pointer;
 
         &__start {
@@ -66,36 +63,34 @@
         }
 
         &__object {
-            color: #00ff00;
         }
 
         &__array {
-            color: #00ff00;
         }
     }
 
     .json-quotes {
-        color: #00ff00;
+        color: rgb(197, 112, 110);
     }
 
     .json-colon {
         margin: 0 4px;
-        color: #00ff00;
+        color: rgb(185,191,197);
         font-weight: bold;
     }
 
     .json-data-type-label {
-        color: #00ff0088;
+        color: rgb(185,191,197, 0.5);
         margin-right: 8px;
     }
 
     .json-comma {
-        color: #00ff0088;
+        color: #000;
     }
 
     .json-toggle {
         padding: 0 8px 0 0;
-        color: #00ff0088;
+        color: rgb(185,191,197);
         font-size: 13px;
 
         &__collapsed {
@@ -103,13 +98,13 @@
     }
 
     .json-ellipsis {
-        color: #00ff00;
+        color: rgb(185,191,197, 0.5);
         font-weight: bold;
         padding: 0 5px;
     }
 
     .json-object-size {
-        color: #00ff0088;
+        color: #aaa;
         font-size: 12px;
         padding: 0 5px;
         margin-left: 8px;
@@ -118,7 +113,7 @@
     .json-node-toolbar {
         margin-left: 4px;
 
-        color: #00ff00;
+        color: rgb(185,191,197, 0.5);
 
         font-size: 14px;
     }
