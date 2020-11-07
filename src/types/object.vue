@@ -1,6 +1,8 @@
 <script>
 import JsonNode from "../node";
 
+const SINGLE_INDENT_WIDTH = 5; // px
+
 export default {
   props: [
     "name",
@@ -64,7 +66,10 @@ export default {
         );
       });
       return (
-        <div style="padding-left: 32px;" class="kv-pair fold-line">
+        <div
+          style={`padding-left:${SINGLE_INDENT_WIDTH * this.indentWidth}px`}
+          class="kv-pair fold-line"
+        >
           {h("div", elements)}
         </div>
       );
