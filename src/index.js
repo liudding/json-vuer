@@ -1,7 +1,7 @@
-import JsonViewer from './json-viewer'
+import JsonVuer from './json-vuer'
 
-JsonViewer.install = function (Vue) {
-    Vue.component(JsonViewer.name, JsonViewer)
+JsonVuer.install = function (Vue) {
+    Vue.component(JsonVuer.name, JsonVuer)
 }
 
-export default JsonViewer
+export default JsonVuer

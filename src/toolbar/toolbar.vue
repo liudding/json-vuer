@@ -1,7 +1,7 @@
 
 <template>
   <span class="json-node-toolbar">
-    <copy v-if="this.enableCopy" :value="value" :indentWidth="indentWidth"></copy>
+    <copy v-if="this.copyable" :value="value" :indentWidth="indentWidth"></copy>
 
     <span @click="onClickEdit" class="json-node-tool json-node-tool__edit">
       <edit></edit>
@@ -20,7 +20,7 @@ import Edit from "../icons/edit";
 import Dispatcher from "../utils/dispatcher";
 
 export default {
-  props: ["enableCopy", "enableEdit", "enableAdd", "enableRemove",  "indentWidth", "name", "value", "namespace"],
+  props: ["copyable", "editable", "addable", "removable",  "indentWidth", "name", "value", "namespace"],
   components: { Copy, Remove, Edit },
   methods: {
     onClickEdit() {

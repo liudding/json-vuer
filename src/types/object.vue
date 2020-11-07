@@ -13,10 +13,10 @@ export default {
     "showArrayIndex",
     "showDataType",
     "showComma",
-    "enableCopy",
-    "enableEdit",
-    "enableAdd",
-    "enableRemove",
+    "copyable",
+    "editable",
+    "addable",
+    "removable",
   ],
   data() {
     return {
@@ -47,10 +47,10 @@ export default {
               showComma: this.showComma && !isLast,
               showArrayIndex: this.showArrayIndex,
 
-              enableCopy: this.enableCopy,
-              enableAdd: this.enableAdd,
-              enableEdit: this.enableEdit,
-              enableRemove: this.enableRemove,
+              copyable: this.copyable,
+              addable: this.addable,
+              editable: this.editable,
+              removable: this.removable,
             },
           })
         );

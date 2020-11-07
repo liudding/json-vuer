@@ -10,10 +10,10 @@
       :showObjectSize="showObjectSize"
       :objectSizeName="objectSizeName"
       :isRoot="true"
-      :enableCopy="enableCopy"
-      :enableAdd="enableAdd"
-      :enableEdit="enableEdit"
-      :enableRemove="enableRemove"
+      :copyable="copyable"
+      :addable="addable"
+      :editable="editable"
+      :removable="removable"
     ></json-node>
 
     <modal :show.sync="showEditor">
@@ -81,19 +81,19 @@ export default {
       default: "default",
     },
 
-    enableCopy: {
+    copyable: {
       type: Boolean,
       default: true,
     },
-    enableAdd: {
+    addable: {
       type: Boolean,
       default: true,
     },
-    enableEdit: {
+    editable: {
       type: Boolean,
       default: true,
     },
-    enableRemove: {
+    removable: {
       type: Boolean,
       default: true,
     },
