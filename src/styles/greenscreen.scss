@@ -122,4 +122,10 @@
 
         font-size: 14px;
     }
+
+    .json-node-tool {
+        &__copy__copied {
+            color: #00FF0044;
+        }
+    }
 }

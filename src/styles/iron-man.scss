@@ -111,5 +111,12 @@
         color: #fff;
 
         font-size: 14px;
+       
+    }
+
+    .json-node-tool {
+        &__copy__copied {
+            color: rgb(136, 255, 136);
+        }
     }
 }
