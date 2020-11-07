@@ -9,9 +9,9 @@ export default {
   props: {
     name: String,
     value: [Object, Array, String, Number, Boolean, Date, Function],
-     namespace: {
+    namespace: {
       type: String,
-      default: 'root'
+      default: "root",
     },
     parentType: String,
     indentWidth: Number,
@@ -49,11 +49,10 @@ export default {
     },
 
     getChildrenNamespace() {
-      if (this.isRoot) return 'root';
+      if (this.isRoot) return "root";
 
-      return this.namespace + '/' + this.name;
+      return this.namespace + "/" + this.name;
     },
-
 
     renderTools(h) {
       return h(Toolbar, {
@@ -87,7 +86,11 @@ export default {
         size = this.value.length;
       }
 
-      return <span class="json-object-size">{size} {this.objectSizeName}</span>;
+      return (
+        <span class="json-object-size">
+          {size} {this.objectSizeName}
+        </span>
+      );
     },
 
     renderStartBrace() {
@@ -137,7 +140,7 @@ export default {
 
       return h(Toggle, {
         props: {
-          iconStyle: this.iconStyle
+          iconStyle: this.iconStyle,
         },
         on: {
           collapsed: this.toggleCollapse,
@@ -224,7 +227,9 @@ export default {
 
         {this.renderEndBrace()}
 
-        {this.showComma ? <span class="comma">,</span> : null}
+        {this.showComma && !this.isRoot ? (
+          <span class="json-comma">,</span>
+        ) : null}
 
         {!this.isNested() || this.collapsed ? this.renderTools(h) : null}
       </div>
