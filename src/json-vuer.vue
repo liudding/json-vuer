@@ -107,7 +107,7 @@ export default {
   },
   computed: {
     viewerClasses: function () {
-      return "json-viewer-container " + this.theme;
+      return "json-vuer " + this.theme;
     },
   },
   data() {
