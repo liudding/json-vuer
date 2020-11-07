@@ -1,4 +1,4 @@
-.json-viewer-container.default {
+.json-vuer.iron-man {
     background-color: #580203;
 
     min-width: 80px;
@@ -10,12 +10,13 @@
         color: #B69A50;
 
         &.array-index {
-            color: rgb(58, 220, 241);
+            color: #B69A50;
         }
     }
 
     .json-value {
         &__object {
+            margin-left: 4px;
             .fold-line {
                 border-left: 1px dotted rgb(156, 156, 156);
             }
@@ -27,7 +28,7 @@
         }
 
         &__boolean {
-            color: green;
+            color: #ED696C;
         }
 
         &__integer {
@@ -48,7 +49,7 @@
             box-sizing: border-box;
             padding: 0 4px;
             border-radius: 4px;
-            color: #adadad;
+            color: #ED696C;
             background-color: rgb(219, 219, 219);
             font-size: 11px;
         }
@@ -56,40 +57,59 @@
 
     .json-braces {
         font-weight: bold;
-        // cursor: pointer;
+        color: #B7E4F0;
 
         &.json-braces__object {
-            color: red;
         }
-        
         &.json-braces__array {
-            color: red;
         }
     }
 
     .json-quotes {
-        color: rgb(247, 114, 114);
+        color: #B69A50;
     }
 
     .json-colon {
         margin: 0 4px;
-        color: rgb(0, 255, 106);
+        color: #B7E4F0;
         font-weight: bold;
+    }
+
+    .json-comma {
+        color: #B7E4F0;
     }
 
     .json-data-type-label {
-        color: gray;
+        color: #B7E4F088;
         margin-right: 8px;
     }
 
-    .json-collapse {
-        padding: 0 8px;
-        color: red;
+    .json-toggle {
+        color: #B7E4F0;
+        font-size: 13px;
+        margin-right: 8px;
     }
 
     .json-ellipsis {
-        color: red;
+        color: #B7E4F0;
         font-weight: bold;
         padding: 0 5px;
+    }
+
+
+    .json-object-size {
+        color: #B7E4F088;
+        font-size: 12px;
+        padding: 0 5px;
+        margin-left: 8px;
+    }
+
+
+    .json-node-toolbar {
+        margin-left: 4px;
+
+        color: #fff;
+
+        font-size: 14px;
     }
 }
