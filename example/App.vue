@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <json-viewer :value="json" theme="default"/>
+    <json-viewer :value="json" iconStyle="circle" theme="night" :showArrayIndex="true" :showComma="true"/>
   </div>
 </template>
 
@@ -13,28 +13,21 @@ export default {
     return {
       json: {
         name: "ding",
-        gener: 1,
-        male: true,
-        foods: ["apple", "banana"],
-        birthday: new Date,
-
-        company: {
-          name: "Menco",
-          employees: 20,
+        integer: 123456,
+        boolean: true,
+        array: ["str1", "str2", 1, 2],
+        obj: {
+          string: "this is a string",
+          null: null,
         },
-        age: 20.3,
-        ud: undefined,
-        comp: null,
-
-        friends: [{
-          name: 'eru',
-          age: 18
+        float: 20.3,
+        nested: [{
+          string: 'first',
         }, {
-          name: 'ning',
-          age: 20
-        }, {
-          name: 'she',
-          age: 18
+          string: 'second',
+          obj: {
+            string: "json vuer"
+          }
         }]
       },
     };

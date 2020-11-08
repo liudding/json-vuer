@@ -21,7 +21,7 @@
 
       <div class="form-group">
         <label></label>
-        <button>submit</button>
+        <button @click="onSubmit" type="button">submit</button>
       </div>
     </form>
   </div>
@@ -45,7 +45,7 @@ export default {
   created() {
   },
   methods: {
-    submite() {
+    onSubmit() {
       this.$emit("update", this.kv);
     },
   },
@@ -63,9 +63,10 @@ export default {
     z-index: 1;
     background: #ffffff;
     max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
+    // margin: 0 auto 100px;
+    padding: 20px 45px;
     text-align: center;
+    border-radius: 4px;
 
     .form-group {
       display: flex;
@@ -90,6 +91,7 @@ export default {
         padding: 12px 16px;
         box-sizing: border-box;
         font-size: 14px;
+        border-radius: 4px;
       }
 
       textarea {
@@ -102,6 +104,7 @@ export default {
       background: #4caf50;
       width: 100%;
       border: 0;
+      border-radius: 4px;
       padding: 15px;
       color: #ffffff;
       font-size: 14px;
