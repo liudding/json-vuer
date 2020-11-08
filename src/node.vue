@@ -40,6 +40,7 @@ export default {
 
   data() {
     return {
+      type: null,
       collapsed: false,
     };
   },
@@ -60,10 +61,12 @@ export default {
         props: {
           name: this.name,
           value: this.value,
+          dataType: this.type,
+          parentType: this.parentType,
           namespace: this.namespace,
           indentWidth: this.indentWidth,
           copyable: this.copyable,
-          addable: this.addable,
+          addable: this.addable && this.isNested(),
           editable: this.editable && !this.isNested(),
           removable: this.removable,
         },

@@ -33,6 +33,10 @@ import Dispatcher from "./utils/dispatcher";
 export default {
   name: "JsonViewer",
   components: { JsonNode, FieldEditor, Modal },
+  model: {
+    prop: "src",
+    event: "update",
+  },
   props: {
     value: {
       type: [Object, Array, String, Number, Boolean, Date, Function],
@@ -110,8 +114,14 @@ export default {
       return "json-vuer " + this.theme;
     },
   },
+  watch: {
+    value(val) {
+      this.src = val;
+    },
+  },
   data() {
     return {
+      src: null,
       showEditor: false,
       editingKv: {
         name: "",
@@ -121,19 +131,43 @@ export default {
     };
   },
   created() {
-    Dispatcher.on(
-      "EDIT_JSON_KEY_VALUE",
-      function (data) {
-        console.log("=== ", data);
-        this.showEditor = true;
-        this.editingKv = data;
-      }.bind(this)
-    );
+    this.src = this.value;
+
+    Dispatcher.on("EDIT_JSON_KEY_VALUE", this.editJsonKv.bind(this));
+
+    Dispatcher.on("REMOVE_JSON_KEY_VALUE", this.remvoeJsonKv.bind(this));
   },
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    editJsonKv(data) {
+      this.showEditor = true;
+      this.editingKv = data;
+    },
+    remvoeJsonKv(data) {
+      const path = data.namespace.split("/");
+      path.shift();
+
+      if (path.length < 1) {
+        this.$delete(this.src, data.name);
+        return;
+      }
+
+      let obj = this.src;
+      for (let p of path) {
+        obj = obj[p];
+      }
+
+      if (data.parentType === "array") {
+        obj.splice(data.name, 1);
+        this.$set(this.src, path[0], this.src[path[0]]);
+      } else {
+        delete obj[data.name];
+        this.$set(this.src, path[0], Object.assign({}, this.src[path[0]]));
+      }
+    },
+  },
 };
 </script>
 
