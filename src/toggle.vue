@@ -23,8 +23,20 @@ import ExpandSquare from "./icons/expand-square";
 import CollapseChevron from "./icons/collapse-chevron";
 import ExpandChevron from "./icons/expand-chevron";
 
+import CollapseTriangle from "./icons/collapse-triangle";
+import ExpandTriangle from "./icons/expand-triangle";
+
 export default {
-  components: { CollapseCircle, ExpandCircle, CollapseSquare, ExpandSquare, CollapseChevron, ExpandChevron },
+  components: {
+    CollapseCircle,
+    ExpandCircle,
+    CollapseSquare,
+    ExpandSquare,
+    CollapseChevron,
+    ExpandChevron,
+    CollapseTriangle,
+    ExpandTriangle,
+  },
   props: {
     iconStyle: {
       type: String,
