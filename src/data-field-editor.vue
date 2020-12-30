@@ -40,12 +40,19 @@ export default {
   data: () => {
     return {
       dataTypes: ['string', 'integer', 'boolean', 'null'],
+      converters: {
+        string: val => { return '' + val; },
+        integer: val => { return +val; },
+        boolean: val => { return !! val},
+        null: () => { return null }
+      }
     };
   },
   created() {
   },
   methods: {
     onSubmit() {
+      this.kv.value = this.converters[this.kv.type](this.kv.value);
       this.$emit("update", this.kv);
     },
   },
