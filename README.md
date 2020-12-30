@@ -3,7 +3,7 @@
 A json viewer and editor for vue
 
 
-![demonstration](./screenshot.png)
+![demonstration](./preview.png)
 
 
 - [json-vuer](#json-vuer)
