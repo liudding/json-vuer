@@ -1,48 +1,55 @@
 # json-vuer
 
+vue 的 JSON 查看和编辑器组件
+
 A json viewer and editor for vue
+
+
+
+[English](./README_en.md)
+
 
 
 ![demonstration](./preview.png)
 
 
 - [json-vuer](#json-vuer)
-  - [Features](#features)
-  - [Installation](#installation)
-  - [Props](#props)
-  - [Themes](#themes)
+  - [功能特性](#功能特性)
+  - [安装说明](#安装说明)
+  - [属性参数](#属性参数)
+  - [个性主题](#个性主题)
 
 
 
-## Features
+## 功能特性
 
-* Nested Node can be collapsed/expanded
-* Object keys can be sorted
-* Json Editor
-* Display Object and array size
-* Theme support and totally customizable
-* Copy to clipboard
+* 节点可展开/折叠
+* key 可按字母排序
+* JSON 编辑
+* 可以展示 array 和 object 的 size
+* 支持可自定义主题样式
+* 可复制到粘贴板
 
 
-## Installation
+## 安装说明
 
-Install the component with npm:
+使用 npm:
 ```shell
 npm install json-vuer --save
 ```
 
-with yarn:
+使用 yarn:
 ```shell
 yarn add json-vuer
 ```
 
-then, in your application javascript, add:
+然后在 js 代码里，添加:
 ```javascript
 import JsonVuer from "json-vuer"
 Vue.use(JsonVuer)
 ```
 
-and then add the component into your html where you want
+最后在模版中使用
 ```html
 <template>
     <div>
@@ -57,49 +64,47 @@ and then add the component into your html where you want
 
 
 
-## Props
+## 属性参数
 
 | Name           | Type                    | Default | Description                                                  |
 | -------------- | ----------------------- | ------- | ------------------------------------------------------------ |
-| value          | JSON                    | null    | Can be any valid json, like object, array, string, etc       |
+| value          | JSON                    | null    | 可以是任何有效的 json： object, array, string 等等       |
 | v-model        | JSON                    |         |                                                              |
-| name           | string \| false \| null | empty   | name of root node. use false or null or empty string for no name |
-| indentWidth    | integer                 | 4       | Indent width for nested objects, like object and array       |
-| showObjectSize | boolean                 | true    | set to false to hide object and array size                   |
-| objectSizeName | string                  | items   | name of the object size                                      |
-| showArrayIndex | boolean                 | true    | set to false to hide array index                             |
-| showDataTypes  | boolean                 | true    | set to false to hide data types                              |
-| showComma      | boolean                 | true    | set to false to hide commas                                  |
-| theme          | string                  | default | Packaged themes: "default", "night", "iron-man", "greenscreen" and you can customize the appearance as you like, [see Themes](#themes) . |
-| iconStyle      | string                  | circle  | style of expand/collapse icons. Accepted values are "circle", triangle", "square", "chevron". |
-| copyable       | boolean                 | true    | set to true to display a copy button on every json node      |
-| addable        | boolean                 | false   | set to true to display a add button on every nested node     |
-| editable       | boolean                 | false   | set to true to display a edit button on every base type node |
-| removable      | boolean                 | false   | set to true to dispaly a delete button on every node         |
-| sort           | boolean                 | false   | set to true to sort object keys                              |
-|                |                         |         |                                                              |
-|                |                         |         |                                                              |
-|                |                         |         |                                                              |
+| name           | string \| false \| null | empty   | 根节点的名称. 可为 null/false/空字符串 |
+| indentWidth    | integer                 | 4       | 缩进       |
+| showObjectSize | boolean                 | true    | 是否显示 object/array 的大小                   |
+| objectSizeName | string                  | items   | “size” 显示的名称                                      |
+| showArrayIndex | boolean                 | true    | 是否展示 array 的 index                             |
+| showDataTypes  | boolean                 | true    | 是否展示数据类型                              |
+| showComma      | boolean                 | true    | 是否显示逗号                                  |
+| theme          | string                  | default | 内置的主题有: "default", "night", "iron-man", "greenscreen"。你可以完全自定义主题样式 [参看](#个性主题) . |
+| iconStyle      | string                  | circle  | 折叠/展开的图标. 可以是："circle", triangle", "square", "chevron". |
+| copyable       | boolean                 | true    | 设置是否可以复制      |
+| addable        | boolean                 | false   | 设置是否可以添加节点     |
+| editable       | boolean                 | false   | 设置是否可以编辑 |
+| removable      | boolean                 | false   | 设置是否可以删除         |
+| sort           | boolean                 | false   | 设置是否对 key 排序                              |
 
 
 
-## Themes
 
-There are two steps to customize a theme
+## 个性主题
 
-1. customize the **SCSS** below
-2. add `theme="my-theme"` to `JsonVuer` component
+只需两步，就可以自定义一个主题
+
+1. 按照如下模版自定义 **SCSS**
+2. 将 `theme="my-theme"` 添加到 `JsonVuer` 组件
 
 ```scss
-.json-vuer.my-theme { // name of your theme
+.json-vuer.my-theme { // 自定你的主题名称
     background-color: #fff;
     
-    .json-name { // customize json key/name 
+    .json-name {
         color: #000;
         &.array-index { color: #0000FF; }
     }
 
-    .json-value {
+    .json-value { // 设置不同类型 value 的显示样式
         &__object {
             margin-left: 4px;
             .fold-line { border-left: 1px dotted #aaa; }
@@ -123,7 +128,7 @@ There are two steps to customize a theme
         }
     }
 
-    .json-braces {
+    .json-braces { // 设置“括号”的显示样式
         &__start {}
         &__end {}
         &__object {}
@@ -131,41 +136,41 @@ There are two steps to customize a theme
     }
 
   	.json-comma,
-    .json-quotes { color: #000; }
+    .json-quotes { color: #000; } // 设置逗号、引号样式
 
-    .json-colon {
+    .json-colon { // 设置冒号样式
         margin: 0 4px;
         color: #000;
         font-weight: bold;
     }
 
-    .json-data-type-label {
+    .json-data-type-label { // 设置数据类型标签样式
         color: #aaa;
         margin-right: 8px;
     }
 
-    .json-toggle {
+    .json-toggle { // 设置“折叠/展开” 样式
         padding: 0 8px 0 0;
         color: #000;
         font-size: 13px;
 
         &__collapsed {}
-	      &__expanded {}
+	    &__expanded {}
     }
 
-    .json-ellipsis {
+    .json-ellipsis { // 设置省略号样式
         color: #000;
         font-weight: bold;
         padding: 0 5px;
     }
 
-    .json-object-size {
+    .json-object-size { // 设置 object/array size 显示标签的样式
         color: #aaa;
         font-size: 12px;
         margin-left: 8px;
     }
 
-    .json-node-toolbar {
+    .json-node-toolbar { // 设置节点工具栏样式
         margin-left: 4px;
         color: #000;
         font-size: 14px;
