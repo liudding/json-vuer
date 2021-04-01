@@ -2,7 +2,13 @@
   "name": "json-vuer",
   "version": "0.1.2",
   "description": "a json viewer and editor component for vue",
-  "keywords": ["vue", "json", "json-viewer", "json-editor"],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "json",
+    "json-viewer",
+    "json-editor"
+  ],
   "homepage": "https://github.com/liudding/json-vuer",
   "license": "MIT",
   "author": {
@@ -14,7 +20,8 @@
     "package": "vue-cli-service build --target lib --name json-vuer --dest lib src/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy:demo": "vue-cli-service build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -31,6 +38,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.1.0",
     "sass": "^1.28.0",
     "sass-loader": "^10.0.4",
     "vue-template-compiler": "^2.6.11"

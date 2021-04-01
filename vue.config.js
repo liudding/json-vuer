@@ -1,7 +1,5 @@
-// const path = require('path');
-// const merge = require('merge')
-
 module.exports = {
+    publicPath: '',
     pages: {
         index: {
             entry: 'example/main.js',
