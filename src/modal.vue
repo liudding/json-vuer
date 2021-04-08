@@ -1,6 +1,6 @@
 <template>
-  <div v-if="show" @click.self="toggle" class="json-viewer-modal__container">
-    <div class="json-viewer-modal__content">
+  <div v-if="show" @click.self="toggle" class="json-vuer-modal__container">
+    <div class="json-vuer-modal__content">
       <slot></slot>
     </div>
   </div>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.json-viewer-modal {
+.json-vuer-modal {
   &__container {
     position: fixed;
     top: 0;

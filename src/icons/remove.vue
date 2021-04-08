@@ -12,7 +12,7 @@ export default {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-          class="json-viewer-icon"
+          class="json-vuer-icon"
       >
         <circle cx="12" cy="12" r="10"></circle>
         <line x1="15" y1="9" x2="9" y2="15"></line>

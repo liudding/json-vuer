@@ -13,7 +13,7 @@ export default {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="json-viewer-icon"
+        class="json-vuer-icon"
       >
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg>
