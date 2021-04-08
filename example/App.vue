@@ -84,6 +84,9 @@ export default {
       .add(this.controls, "iconStyle", {
         Circle: "circle",
         Triangle: "triangle",
+        Square: "square",
+        Chevron: "chevron"
+
       })
       .name("iconStyle");
 
