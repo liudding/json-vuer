@@ -31,7 +31,7 @@ import Modal from "./modal";
 import Dispatcher from "./utils/dispatcher";
 
 export default {
-  name: "JsonViewer",
+  name: "JsonVuer",
   components: { JsonNode, FieldEditor, Modal },
   model: {
     prop: "src",

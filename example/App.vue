@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="control-panel"></div>
-    <json-viewer
+    <json-vuer
       :value="json"
       :theme="controls.theme"
       :iconStyle="controls.iconStyle"

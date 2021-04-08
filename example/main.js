@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import JsonViewer from "../src";
+import JsonVuer from "../src";
 
-Vue.use(JsonViewer);
+Vue.use(JsonVuer);
 
 Vue.config.productionTip = false
 
