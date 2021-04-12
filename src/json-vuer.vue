@@ -135,7 +135,7 @@ export default {
 
     Dispatcher.on("EDIT_JSON_KEY_VALUE", this.editJsonKv.bind(this));
 
-    Dispatcher.on("REMOVE_JSON_KEY_VALUE", this.remvoeJsonKv.bind(this));
+    Dispatcher.on("REMOVE_JSON_KEY_VALUE", this.removeJsonKv.bind(this));
   },
 
   mounted() {},
@@ -145,7 +145,7 @@ export default {
       this.showEditor = true;
       this.editingKv = data;
     },
-    remvoeJsonKv(data) {
+    removeJsonKv(data) {
       const path = data.namespace.split("/");
       path.shift();
 
@@ -158,8 +158,6 @@ export default {
       for (let p of path) {
         obj = obj[p];
       }
-
-      console.log(path);
 
       if (data.parentType === "array") {
         obj.splice(data.name, 1);
