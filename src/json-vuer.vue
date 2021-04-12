@@ -29,6 +29,7 @@ import JsonNode from "./node";
 import FieldEditor from "./data-field-editor";
 import Modal from "./modal";
 import Dispatcher from "./utils/dispatcher";
+import { deepClone } from "./utils";
 
 export default {
   name: "JsonVuer",
@@ -164,7 +165,7 @@ export default {
         this.$set(this.src, path[0], this.src[path[0]]);
       } else {
         delete obj[data.name];
-        this.$set(this.src, path[0], Object.assign({}, this.src[path[0]]));
+        this.$set(this.src, path[0], deepClone(this.src[path[0]]));
       }
     },
     onFieldChange(data) {
@@ -187,8 +188,11 @@ export default {
         obj.splice(data.name, 1, data.value);
         this.$set(this.src, path[0], this.src[path[0]]);
       } else {
-        obj[data.name] = data.value;
-        this.$set(this.src, path[0], Object.assign({}, this.src[path[0]]));
+        if (data.name !== data.newName) {
+          delete obj[data.name];
+        }
+        obj[data.newName] = data.value;
+        this.$set(this.src, path[0], deepClone(this.src[path[0]]));
       }
     },
   },

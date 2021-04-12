@@ -81,7 +81,7 @@ export default {
       console.log(this.selectedType, this.value);
       const value = this.converters[this.selectedType](this.value);
       const newKv = Object.assign({}, this.kv);
-      newKv.name = this.name.trim();
+      newKv.newName = this.name.trim();
       newKv.dataType = this.selectedType;
       newKv.value = value;
 
