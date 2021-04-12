@@ -19,7 +19,7 @@
     ></json-node>
 
     <modal :show.sync="showEditor">
-      <field-editor v-model="editingKv"></field-editor>
+      <field-editor :kv="editingKv" @change="onFieldChange"></field-editor>
     </modal>
   </div>
 </template>
@@ -159,11 +159,37 @@ export default {
         obj = obj[p];
       }
 
+      console.log(path);
+
       if (data.parentType === "array") {
         obj.splice(data.name, 1);
         this.$set(this.src, path[0], this.src[path[0]]);
       } else {
         delete obj[data.name];
+        this.$set(this.src, path[0], Object.assign({}, this.src[path[0]]));
+      }
+    },
+    onFieldChange(data) {
+      console.log(data);
+      this.showEditor = false;
+
+      const path = data.namespace.split("/");
+      path.shift();
+
+      if (path.length < 1) {
+        return;
+      }
+
+      let obj = this.src;
+      for (let p of path) {
+        obj = obj[p];
+      }
+
+      if (data.parentType === "array") {
+        obj.splice(data.name, 1, data.value);
+        this.$set(this.src, path[0], this.src[path[0]]);
+      } else {
+        obj[data.name] = data.value;
         this.$set(this.src, path[0], Object.assign({}, this.src[path[0]]));
       }
     },

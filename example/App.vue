@@ -61,6 +61,7 @@ export default {
             obj: {
               string: "json vuer",
             },
+            deepArray: [1,2,3]
           },
         ],
       },
